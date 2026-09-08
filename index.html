@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Welcome Back, My Love</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- custom cursor (desktop only) -->
+<div class="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"></div>
+
+<!-- ambient particle canvas, sits behind everything -->
+<canvas id="particles" aria-hidden="true"></canvas>
+
+<!-- music control -->
+<button id="musicToggle" class="music-btn" aria-label="Play music">
+  <span class="music-bars" aria-hidden="true">
+    <i></i><i></i><i></i>
+  </span>
+</button>
+<audio id="bgMusic" loop preload="none">
+  <source src="assets/music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- ============ OPENING CINEMATIC ============ -->
+<section id="opening" class="opening">
+  <div class="opening-lines">
+    <p class="line" data-line="1">After all those miles&hellip;</p>
+    <p class="line" data-line="2">After all those days&hellip;</p>
+    <p class="line" data-line="3">You&rsquo;re finally home.</p>
+  </div>
+  <div class="opening-title">
+    <h1>Welcome Back,<br><span>My Love</span></h1>
+  </div>
+  <div class="scroll-cue" aria-hidden="true">
+    <span></span>
+    <p>scroll</p>
+  </div>
+</section>
+
+<!-- ============ HERO ============ -->
+<section id="hero" class="hero">
+  <div class="hero-photo-wrap">
+    <div class="hero-photo-glow" aria-hidden="true"></div>
+    <div class="hero-photo-frame">
+      <img src="person.jpg" alt="" class="hero-photo" id="heroPhoto">
+    </div>
+  </div>
+
+  <div class="hero-text">
+    <p class="hero-eyebrow">Welcome back, my love <span class="heart">&#x1F90D;</span></p>
+    <div class="hero-route">
+      <span>Saudi Arabia</span>
+      <span class="route-arrow">&rarr;</span>
+      <span>Pakistan</span>
+    </div>
+    <p class="hero-sub">The distance is finally over.</p>
+  </div>
+</section>
+
+<!-- ============ EMOTIONAL MESSAGE ============ -->
+<section id="message" class="message-section">
+  <h2 class="message-heading reveal-up">Do you know what your return means to me?</h2>
+
+  <div class="message-body">
+    <p class="reveal-up">Some distances are measured in kilometers.</p>
+    <p class="reveal-up">Some are measured in the number of days you spend missing someone.</p>
+    <p class="reveal-up">Saudi Arabia was far away&hellip;</p>
+    <p class="reveal-up">but somehow, you were always close to my heart.</p>
+    <p class="reveal-up emphasis">And now, after all those miles, you&rsquo;re finally back where I&rsquo;ve been waiting for you.</p>
+  </div>
+</section>
+
+<!-- ============ DISTANCE VISUAL ============ -->
+<section id="journey" class="journey-section">
+  <div class="journey-visual">
+    <div class="journey-point" id="pointStart">
+      <span class="point-dot"></span>
+      <span class="point-label">Saudi Arabia</span>
+    </div>
+
+    <svg class="journey-line" viewBox="0 0 100 400" preserveAspectRatio="none" aria-hidden="true">
+      <path id="journeyPath" d="M 50 10 C 20 100, 80 200, 50 390" fill="none" stroke="#C9A96E" stroke-width="0.6" stroke-linecap="round" stroke-dasharray="3 4"/>
+    </svg>
+
+    <div class="journey-point" id="pointEnd">
+      <span class="point-dot"></span>
+      <span class="point-label">Pakistan</span>
+    </div>
+  </div>
+  <p class="journey-caption reveal-up">A long way away. A short distance from my heart.</p>
+</section>
+
+<!-- ============ I MISSED YOU ============ -->
+<section id="missed" class="missed-section">
+  <p class="missed-line missed-1">I missed you.</p>
+  <p class="missed-line missed-2">More than I ever knew how to say.</p>
+</section>
+
+<!-- ============ FINAL WELCOME ============ -->
+<section id="final" class="final-section">
+  <p class="final-pre reveal-up">But now&hellip;</p>
+  <p class="final-here reveal-up">You&rsquo;re here.</p>
+  <h2 class="final-welcome reveal-up">Welcome home, my love. <span class="heart">&#x2764;&#xFE0F;</span></h2>
+  <p class="final-memories reveal-up">Now let&rsquo;s make new memories.</p>
+
+  <button id="secretBtn" class="secret-btn reveal-up">
+    <span>One More Thing&hellip;</span>
+  </button>
+
+  <div id="secretMessage" class="secret-message" aria-hidden="true">
+    <p>I missed your presence.<br>I missed your voice.<br>I missed the little things.</p>
+    <p>And now that you&rsquo;re back,<br>I don&rsquo;t want to count the distance anymore.</p>
+    <p>I just want to make memories with you.</p>
+    <p class="secret-signoff">Welcome back. <span class="heart">&#x2764;&#xFE0F;</span></p>
+    <p class="secret-final">Home feels a little more complete now.</p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <p>Made with love, just for you.</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
